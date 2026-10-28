@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "author": "Jeyadev",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 115.8,
+      "left": 220.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultraFront",
+      "top": -17.7,
+      "left": 139.9,
+      "attrs": {
+        "distance": "400"
+      }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultraDown",
+      "top": 347.1,
+      "left": 139.9,
+      "attrs": {
+        "distance": "2"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 108,
+      "left": 520.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnSOS",
+      "top": 246.2,
+      "left": 518.4,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-ds18b20",
+      "id": "tempSensor",
+      "top": 329.1,
+      "left": 515.8,
+      "attrs": {
+        "temperature": "25"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "pullup",
+      "top": 270,
+      "left": 640,
+      "attrs": {
+        "value": "4700"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 40,
+      "left": 520,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 20,
+      "left": 650,
+      "attrs": {
+        "pins": "i2c"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:5V",
+      "ultraFront:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:GND",
+      "ultraFront:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:2",
+      "ultraFront:TRIG",
+      "green",
+      []
+    ],
+    [
+      "uno:3",
+      "ultraFront:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "uno:5V",
+      "ultraDown:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:GND",
+      "ultraDown:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:4",
+      "ultraDown:TRIG",
+      "green",
+      []
+    ],
+    [
+      "uno:5",
+      "ultraDown:ECHO",
+      "blue",
+      []
+    ],
+    [
+      "uno:GND",
+      "buzzer:1",
+      "black",
+      []
+    ],
+    [
+      "uno:6",
+      "buzzer:2",
+      "orange",
+      []
+    ],
+    [
+      "uno:13",
+      "led1:A",
+      "green",
+      []
+    ],
+    [
+      "led1:C",
+      "uno:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:7",
+      "btnSOS:1.l",
+      "purple",
+      []
+    ],
+    [
+      "btnSOS:2.r",
+      "uno:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:5V",
+      "tempSensor:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:GND",
+      "tempSensor:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:8",
+      "tempSensor:DQ",
+      "yellow",
+      []
+    ],
+    [
+      "uno:5V",
+      "pullup:1",
+      "red",
+      []
+    ],
+    [
+      "pullup:2",
+      "tempSensor:DQ",
+      "yellow",
+      []
+    ],
+    [
+      "uno:5V",
+      "lcd1:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:GND",
+      "lcd1:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:A4",
+      "lcd1:SDA",
+      "green",
+      []
+    ],
+    [
+      "uno:A5",
+      "lcd1:SCL",
+      "blue",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
