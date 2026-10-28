@@ -85,4 +85,51 @@ A push button activates a simulated SOS alert mode. The current prototype does n
 3. The downward ultrasonic sensor checks for distance conditions that may indicate a stair or drop-off.
 4. The DS18B20 measures temperature and activates a warning when the configured threshold is reached.
 5. The SOS button can activate the simulated emergency alert.
-6. The Arduino selects the applicable alert, updates the
+6. The Arduino selects the applicable alert, updates the LCD, and controls the buzzer and LED.
+7. The monitoring process repeats continuously.
+
+## 🧪 Simulation
+
+The project is implemented in Wokwi. The repository contains the Arduino source code and circuit configuration used for the simulation.
+
+To explore the project:
+
+1. Open the `Arduino_Code` folder to view the Arduino program.
+2. Open the `Wokwi_Simulation` folder to view the circuit configuration.
+3. Refer to the `Documentation` folder for the case study and presentation.
+
+## 📁 Repository Structure
+
+```text
+VisionGuard/
+├── README.md
+├── Arduino_Code/
+│   └── VisionGuard.ino
+├── Wokwi_Simulation/
+│   ├── diagram.json
+│   └── libraries.txt
+└── Documentation/
+    ├── VisionGuard_Case_Study_Submission_Ready.docx
+    └── VisionGuard_Presentation.pptx
+```
+
+*The filenames shown above are examples of the intended organization. Actual filenames may differ.*
+
+## ⚠️ Limitations
+
+* The DS18B20 measures its own temperature; it is not a long-range flame detector.
+* The SOS feature is simulated and does not send real emergency messages or GPS coordinates.
+* Ultrasonic sensor readings may vary depending on object shape, angle, and environmental conditions.
+* The project is a prototype and has not been validated as a real-world mobility or safety device.
+
+## 🔮 Future Enhancements
+
+* Integrate GPS and a communication module for emergency location sharing.
+* Investigate suitable non-contact thermal or flame-detection hardware.
+* Add vibration-based alerts for improved accessibility.
+* Improve sensor reliability and alert handling.
+* Conduct practical testing and user-centered evaluation.
+
+---
+
+**VisionGuard — Demonstrating sensor-based assistance for safer mobility.**
